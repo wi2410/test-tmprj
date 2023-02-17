@@ -6,6 +6,7 @@ import {
   DateCardNews,
   UrlCardNews,
   CardButtonNews,
+  TopLineCard
 //   BoxBand,
 } from './NewsItem.styled';
 
@@ -16,6 +17,7 @@ const NewsItem = ({ title, description, date, url }) => {
 
   return (
     <CardNews >
+      <TopLineCard></TopLineCard>
       {/* <BoxBand> */}
         <TitleCardNews>{title}</TitleCardNews>
       {/* </BoxBand> */}

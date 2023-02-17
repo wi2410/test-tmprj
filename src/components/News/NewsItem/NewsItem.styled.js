@@ -19,7 +19,13 @@ export const CardNews = styled.div`
 //     background: url(${Band}) no-repeat;
 //   }
 // `;
-
+export const TopLineCard = styled.div`
+  width: 340px;
+  height: 4px;
+  margin-bottom: 4px;
+  border-radius: 40px;
+  background:linear-gradient(90deg, #FF634E 0%, #FFDF48 105.44%);
+`;
 export const TitleCardNews = styled.h3`
   padding-top: 8px;
   font-family: 'Manrope';

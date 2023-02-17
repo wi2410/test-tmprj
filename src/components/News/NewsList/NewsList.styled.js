@@ -5,7 +5,8 @@ export const ListNews = styled.ul`
     flex-wrap: wrap;
     margin-left: -30px;
     margin-bottom: -30px;
-    margin-top: 60px;   
+    margin-top: 60px; 
+    list-style: none;  
 `;
 
 export const ItemNews = styled.li`
