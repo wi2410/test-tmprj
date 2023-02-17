@@ -1,8 +1,10 @@
+import NewsList from "./News/NewsList/NewsList";
+
 export const App = () => {
   return (
     <div
       style={{
-        height: '100vh',
+        // height: '100vh',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -10,7 +12,9 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      React homework template
+          <h1>News</h1>
+      <NewsList/>
+      {/* React homework template */}
     </div>
   );
 };
