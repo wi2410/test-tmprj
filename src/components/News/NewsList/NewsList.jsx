@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import NewsItem from '../NewsItem/NewsItem';
-import news from 'components/news';
+// import news from 'components/news';
 import { ReactComponent as SearchBtn } from './../../../icons/SearchBtn.svg';
 import { ReactComponent as CancelBtn } from './../../../icons/CancelBtn.svg';
 
@@ -12,11 +12,23 @@ import {
   SearchNewsForm,
   SearchNewsInput,
   SearchNewsButton,
-//   ErrorTitle,
+  Title,
 } from './NewsList.styled';
 
 const NewsList = () => {
+    const [newsItem, setNewsItem] = useState([]);
     const [value, setValue] = useState('');
+    useEffect(() => {
+        fetchNews();
+    },[])
+
+    const fetchNews = async () => {
+        const responce = await fetch(`https://pet-support.onrender.com/api/news`);
+        const result = await responce.json();
+        console.log(result);
+        setNewsItem(result);
+        return result;
+    }
     
     const handleChange = evt => {
         evt.preventDefault();
@@ -34,12 +46,18 @@ const NewsList = () => {
         
         setValue('');
     };
-
-    const filterNews = news.filter(news => {
+    // const news = newsItem.sort(function (a, b) {
+    //     const dateA = new Date(a.date);
+    //     const dateB = new Date(b.date);
+    //     return dateB - dateA;
+    //     });
+ 
+    const filterNews = newsItem.filter(news => {
     return news.title.toLowerCase().includes(value.toLowerCase());
   });
     return (
         <ConteinerNews>
+            <Title>News</Title>
             <SearchNewsForm>
                 <SearchNewsInput
                     type="text"

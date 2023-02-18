@@ -7,13 +7,14 @@ export const App = () => {
         // height: '100vh',
         display: 'flex',
         justifyContent: 'center',
-        flexDirection:'column',
+        
         alignItems: 'center',
         fontSize: 40,
-        color: '#010101'
+        color: '#010101',
+        background: '#FDF7F2'
       }}
     >
-          <h1>News</h1>
+          
       <NewsList/>
       {/* React homework template */}
     </div>

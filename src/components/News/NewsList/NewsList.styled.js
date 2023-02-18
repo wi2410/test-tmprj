@@ -1,5 +1,18 @@
 import styled from 'styled-components';
 
+export const Title = styled.h1`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;      
+  align-items: center;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 66px;  
+  
+`;
+
 export const ListNews = styled.ul`
     display: flex;
     flex-wrap: wrap;
@@ -30,7 +43,7 @@ export const SearchNewsForm = styled.form`
   position: relative;
   margin: 0px auto;
   width: 608px;
-  height: 100%;
+  height: 44px;
   border-radius: 44px;
   background-color: white;
   border: none;
@@ -41,11 +54,11 @@ export const SearchNewsForm = styled.form`
 export const SearchNewsInput = styled.input`
   display: inline-block;
   width: 100%;
-  height: 44px;
+  height: 100%;
   padding: 8px 52px 8px 20px;
   border-radius: 44px;
   background-color: white;
-  box-shadow: 7px 4px 15px 0px grey;
+  box-shadow: 7px 4px 14px rgba(49, 21, 4, 0.07);
   border: none;
   outline: none;
   font-size: 16px;
@@ -70,7 +83,7 @@ export const SearchNewsButton = styled.button`
   top: 8px;
   right: 20px;
   width: 32px;
-  height: 32px;
+  height: 45px;
   border-radius: 32px;
   border: none;
   outline: none;
