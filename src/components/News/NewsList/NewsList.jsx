@@ -46,11 +46,11 @@ const NewsList = () => {
         
         setValue('');
     };
-    // const news = newsItem.sort(function (a, b) {
-    //     const dateA = new Date(a.date);
-    //     const dateB = new Date(b.date);
-    //     return dateB - dateA;
-    //     });
+    const news = newsItem.sort(function (a, b) {
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+        return dateB - dateA;
+        });
  
     const filterNews = newsItem.filter(news => {
     return news.title.toLowerCase().includes(value.toLowerCase());
