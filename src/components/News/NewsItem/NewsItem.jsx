@@ -1,4 +1,5 @@
 import React from 'react';
+import format from 'date-fns/format'
 import {
   CardNews,
   DescriptionCardNews,
@@ -14,6 +15,8 @@ const NewsItem = ({ title, description, date, url }) => {
 //   const dateSlash = date.replaceAll('-', '/');
 
 //   const dateRevers = dateSlash.split('/').reverse().join('/');
+  const now = format(new Date(date), 'yyyy/MM/dd');
+  
 
   return (
     <CardNews >
@@ -24,7 +27,7 @@ const NewsItem = ({ title, description, date, url }) => {
 
       <DescriptionCardNews>{description}</DescriptionCardNews>
       <CardButtonNews>
-        <DateCardNews>{date}</DateCardNews>
+        <DateCardNews>{now}</DateCardNews>
         <UrlCardNews href={url} target="_blank">
           Read more
         </UrlCardNews>

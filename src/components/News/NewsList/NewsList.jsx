@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import NewsItem from '../NewsItem/NewsItem';
+import format from 'date-fns/format'
 // import news from 'components/news';
 import { ReactComponent as SearchBtn } from './../../../icons/SearchBtn.svg';
 import { ReactComponent as CancelBtn } from './../../../icons/CancelBtn.svg';
@@ -46,11 +47,15 @@ const NewsList = () => {
         
         setValue('');
     };
-    const news = newsItem.sort(function (a, b) {
-        const dateA = new Date(a.date);
-        const dateB = new Date(b.date);
-        return dateB - dateA;
-        });
+    // const news = newsItem.sort(function (a, b) {
+    //     const dateA = new Date(a.date);
+    //     const dateB = new Date(b.date);
+    //     return dateB - dateA;
+    //     });
+
+    
+    
+    console.log('formatDate',format(new Date("2023-02-16T17:45:32.195Z"), 'yyyy/MM/dd'));
  
     const filterNews = newsItem.filter(news => {
     return news.title.toLowerCase().includes(value.toLowerCase());
