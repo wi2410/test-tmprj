@@ -83,7 +83,11 @@ const NewsList = () => {
                 
             </SearchNewsForm>
             <ListNews>
-                {filterNews.map(({ _id, title, description, date, url }) => (
+                {filterNews.sort(function (a, b) {
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+        return dateB - dateA;
+        }).map(({ _id, title, description, date, url }) => (
                     <ItemNews key={_id}>
                         <NewsItem
                             title={title}
