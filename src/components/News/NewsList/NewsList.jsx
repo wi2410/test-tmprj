@@ -5,6 +5,8 @@ import format from 'date-fns/format'
 import { ReactComponent as SearchBtn } from './../../../icons/SearchBtn.svg';
 import { ReactComponent as CancelBtn } from './../../../icons/CancelBtn.svg';
 
+import Loader from '../../Loader/Loader';
+
 
 import {
   ListNews,
@@ -19,14 +21,21 @@ import {
 const NewsList = () => {
     const [newsItem, setNewsItem] = useState([]);
     const [value, setValue] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+
     useEffect(() => {
-        fetchNews();
+        setIsLoading(true);
+        setTimeout(() => {
+            fetchNews();
+        }, 2000);
+        
     },[])
 
     const fetchNews = async () => {
         const responce = await fetch(`https://pet-support.onrender.com/api/news`);
         const result = await responce.json();
         console.log(result);
+        setIsLoading(false);
         setNewsItem(result);
         return result;
     }
@@ -47,11 +56,6 @@ const NewsList = () => {
         
         setValue('');
     };
-    // const news = newsItem.sort(function (a, b) {
-    //     const dateA = new Date(a.date);
-    //     const dateB = new Date(b.date);
-    //     return dateB - dateA;
-    //     });
 
     
     
@@ -83,7 +87,9 @@ const NewsList = () => {
                 
             </SearchNewsForm>
             <ListNews>
-                {filterNews.sort(function (a, b) {
+                {isLoading ? (<Loader />) :
+                    (
+                        filterNews.sort(function (a, b) {
         const dateA = new Date(a.date);
         const dateB = new Date(b.date);
         return dateB - dateA;
@@ -96,8 +102,10 @@ const NewsList = () => {
                             url={url}
                         />
                     </ItemNews>
-                ))
-                }
+        ))
+                    )}
+                
+                
             </ListNews>
 
         </ConteinerNews>

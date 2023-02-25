@@ -1,5 +1,6 @@
 import NewsList from "./News/NewsList/NewsList";
 
+
 export const App = () => {
   return (
     <div
@@ -14,7 +15,6 @@ export const App = () => {
         background: '#FDF7F2'
       }}
     >
-          
       <NewsList/>
       {/* React homework template */}
     </div>
