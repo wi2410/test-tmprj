@@ -94,3 +94,7 @@ export const SearchNewsButton = styled.button`
     fill: orange;
   }
 `;
+
+export const ErrorTitle = styled.h3`
+  text-align: center;
+`;

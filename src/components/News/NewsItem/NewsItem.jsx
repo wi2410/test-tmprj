@@ -1,5 +1,5 @@
 import React from 'react';
-import format from 'date-fns/format'
+import format from 'date-fns/format';
 import {
   CardNews,
   DescriptionCardNews,
@@ -7,23 +7,18 @@ import {
   DateCardNews,
   UrlCardNews,
   CardButtonNews,
-  TopLineCard
-//   BoxBand,
+  TopLineCard,
+  //   BoxBand,
 } from './NewsItem.styled';
 
 const NewsItem = ({ title, description, date, url }) => {
-//   const dateSlash = date.replaceAll('-', '/');
-
-//   const dateRevers = dateSlash.split('/').reverse().join('/');
   const now = format(new Date(date), 'yyyy/MM/dd');
-  
 
   return (
-    <CardNews >
+    <CardNews>
       <TopLineCard></TopLineCard>
-      {/* <BoxBand> */}
-        <TitleCardNews>{title}</TitleCardNews>
-      {/* </BoxBand> */}
+
+      <TitleCardNews>{title}</TitleCardNews>
 
       <DescriptionCardNews>{description}</DescriptionCardNews>
       <CardButtonNews>
