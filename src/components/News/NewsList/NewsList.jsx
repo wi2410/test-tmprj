@@ -8,6 +8,7 @@ import { Pagination } from '@mui/material';
 
 import Loading from '../../Loader/Loader';
 import NotFound from '../../Loader/NotFound';
+import ScrollToTop from '../../ScrollToTop/ScrollToTopButton';
 
 import {
   ListNews,
@@ -133,7 +134,14 @@ const NewsList = () => {
             <NotFound />
           </div>
         )}
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+          repellendus ut eum blanditiis obcaecati laborum at officia facilis
+          dolor. Perspiciatis saepe, laboriosam eaque cum ex itaque facilis nam
+          alias dignissimos?
+        </p>
       </ListNews>
+      <ScrollToTop />
     </ConteinerNews>
   );
 };
