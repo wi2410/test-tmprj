@@ -4,6 +4,7 @@ import format from 'date-fns/format';
 // import news from 'components/news';
 import { ReactComponent as SearchBtn } from './../../../icons/SearchBtn.svg';
 import { ReactComponent as CancelBtn } from './../../../icons/CancelBtn.svg';
+import { Pagination } from '@mui/material';
 
 import Loading from '../../Loader/Loader';
 import NotFound from '../../Loader/NotFound';
@@ -23,6 +24,10 @@ const NewsList = () => {
   const [newsItem, setNewsItem] = useState([]);
   const [value, setValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [page, setPage] = useState(1);
+  const handleChangePagination = (event, page) => {
+    setPage(page);
+  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -65,6 +70,7 @@ const NewsList = () => {
   const filterNews = newsItem.filter(news => {
     return news.title.toLowerCase().includes(value.toLowerCase());
   });
+  const count = Math.ceil(filterNews.length / 6);
   return (
     <ConteinerNews>
       <Title>News</Title>
@@ -107,6 +113,17 @@ const NewsList = () => {
                 />
               </ItemNews>
             ))
+        )}
+        {filterNews.length !== 0 && !isLoading && (
+          <Pagination
+            color="primary"
+            count={count}
+            size="large"
+            page={page}
+            variant="outlined"
+            onChange={handleChangePagination}
+            style={{ display: 'flex', justifyContent: 'center' }}
+          />
         )}
         {filterNews.length === 0 && !isLoading && (
           <div>

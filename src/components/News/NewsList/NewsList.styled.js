@@ -19,7 +19,8 @@ export const ListNews = styled.ul`
     margin-left: -30px;
     margin-bottom: -30px;
     margin-top: 60px; 
-    list-style: none;  
+    list-style: none; 
+    justify-content: center; 
 `;
 
 export const ItemNews = styled.li`
